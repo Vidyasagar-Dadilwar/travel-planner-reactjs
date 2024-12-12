@@ -8,6 +8,7 @@ import Header from './components/custom/Header.jsx';
 import { ClerkProvider } from '@clerk/clerk-react';
 import ViewTrip from './view-trips/[tripId]/index.jsx';
 import MyTrips from './components/custom/MyTrips.jsx';
+import { Analytics } from "@vercel/analytics/react"
 
 const router = createBrowserRouter([
   {
@@ -31,7 +32,7 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    {/* <ClerkProvider frontendApi={import.meta.env.REACT_APP_CLERK_API_KEY}> */}
+    <Analytics />
     <ClerkProvider publishableKey='pk_test_Z2VuZXJvdXMtc2t1bmstNTcuY2xlcmsuYWNjb3VudHMuZGV2JA'>
       <Header />
       <RouterProvider router={router} />
